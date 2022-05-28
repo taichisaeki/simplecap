@@ -4,7 +4,7 @@ localStorage.setItem("datalist", JSON.stringify(datalist));
 
 
 window.onload = function() {
-    const DICT_PATH = "/kuromoji/dict";
+    const DICT_PATH = "kuromoji/dict";
     const story = "ここまで音声認識を行ってきましがいかがでしょうか";
 
 	const ids = [];
