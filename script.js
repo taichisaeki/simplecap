@@ -25,11 +25,13 @@ document.onmousedown = function(e) {
     var elemtag = elem.tagName;
 
     if(elemtag == "SPAN") {
-        var value1 = localStorage.getItem(elemId);
-        value1 = JSON.parse(value1);
-        //console.log(value1.join('\n'));
-        document.getElementById("cadition").innerHTML = value1.join(' >>> ');
-        openClose();
+        if(elem.className == "results") {
+            var value1 = localStorage.getItem(elemId);
+            value1 = JSON.parse(value1);
+            //console.log(value1.join('\n'));
+            document.getElementById("cadition").innerHTML = value1.join(' >>> ');
+            openClose();
+        }
     } else {
         return;
     }
@@ -57,7 +59,6 @@ function vr_function() {
     var timestamp = date.getTime() ;
     var span = document.createElement("span");
     span.setAttribute("id", timestamp);
-    span.setAttribute("class", 'results');
 
 
     var segmenter = new TinySegmenter();                 // インスタンス生成
@@ -84,6 +85,8 @@ function vr_function() {
                 var result_log = last_finished + "。" + '<br>';
                 
                 if(event.results[0].length >= 4) { //候補が4つ以上あったらリストに追加
+                    span.setAttribute("class", 'results');
+
                     for (var j = 0; j<recognition.maxAlternatives; j++){
                         canditadearry.push(results[i][j].transcript);
                         localStorage.setItem(timestamp, JSON.stringify(canditadearry));
