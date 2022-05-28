@@ -1,7 +1,7 @@
 let datalist = {};
 localStorage.setItem("datalist", JSON.stringify(datalist));
 
-const DICT_PATH = "/dict";
+const DICT_PATH = "./dict";
 const story = "ここまで音声認識を行ってきましがいかがでしょうか";
 
 window.onload = (event)=>{
