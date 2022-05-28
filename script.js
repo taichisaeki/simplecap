@@ -6,7 +6,7 @@ localStorage.setItem("datalist", JSON.stringify(datalist));
 window.onload = function() {
     var segmenter = new TinySegmenter();                 // インスタンス生成
 
-    var segs = segmenter.segment("ここまで音声認識を行ってきましたがいかがでしょうか");  // 単語の配列が返る
+    var segs = segmenter.segment("ここまで音声認識を行ってきましたがどうでしょうか。");  // 単語の配列が返る
     
     console.log(segs);
 }
