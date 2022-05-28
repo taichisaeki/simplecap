@@ -23,7 +23,10 @@ body {
     position: fixed;
     top: 0;
     left:0;
+}
 
+#result_text span:hover {
+    text-decoration: underline;
 }
 
 #innter_text {
