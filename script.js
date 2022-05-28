@@ -11,6 +11,13 @@ function openClose(){
     }
 }
 
+document.querySelectorAll("#result_text").forEach(function(){
+    this.addEventListener('keyup',function(e){
+        e.srcElement.style.height = 0
+        e.srcElement.style.height = e.srcElement.scrollHeight+"px"
+    })
+})
+
 document.onmousedown = function(e) {
     var e = e || window.event;
     var elem = e.target || e.srcElement;
@@ -24,7 +31,7 @@ document.onmousedown = function(e) {
         document.getElementById("cadition").innerHTML = value1.join(' >>> ');
         openClose();
     } else {
-        return false;
+        return;
     }
 }
 
@@ -42,7 +49,6 @@ function vr_function() {
     recognition.interimResults = true;
     recognition.maxAlternatives = 4;
     var last_finished = '';
-    let current_transcripts = '';
     let transcript = '';
 
     var canditadearry = [];
@@ -67,6 +73,8 @@ function vr_function() {
 
     recognition.onresult = function(event) {
         var results = event.results;
+        var current_transcripts = '';
+
 
             for (let i = event.resultIndex; i < event.results.length; i++) {
             transcript = event.results[i][0].transcript;
@@ -86,7 +94,7 @@ function vr_function() {
                 vr_function();
             } else {
                 current_transcripts += results[i][0].transcript;
-                document.getElementById('innter_text').innerHTML = '<span style="color: darkgray;">' + results[i][0].transcript + '</span>';
+                document.getElementById('innter_text').innerHTML = '<span style="color: darkgray;">' + current_transcripts + '</span>';
                 flag_speech = 1;
             }
 
