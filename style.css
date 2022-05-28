@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: darkgray;
+}
+
+#content {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+#result_text {
+    color: white;
+    font-size: 3vw;
+}
+
+#innter_text {
+    color: darkgray;
+    font-size: 3vw;
+}
