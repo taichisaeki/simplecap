@@ -1,11 +1,6 @@
 let datalist = {};
 localStorage.setItem("datalist", JSON.stringify(datalist));
 
-kuromoji.builder({ dicPath: "/dict/" }).build(function (err, tokenizer) {
-    // tokenizer is ready
-    var path = tokenizer.tokenize("すもももももももものうち");
-    console.log(path);
-});
 
 function vr_function() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
