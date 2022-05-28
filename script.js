@@ -83,11 +83,16 @@ function vr_function() {
                 last_finished = results[i][0].transcript;
                 var result_log = last_finished + "。" + '<br>';
                 
-                for (var j = 0; j<recognition.maxAlternatives; j++){
-                    canditadearry.push(results[i][j].transcript);
-                    localStorage.setItem(timestamp, JSON.stringify(canditadearry));
-                    //console.log(results[i][j].transcript);
+                if(event.results[0].length >= 4) { //候補が4つ以上あったらリストに追加
+                    for (var j = 0; j<recognition.maxAlternatives; j++){
+                        canditadearry.push(results[i][j].transcript);
+                        localStorage.setItem(timestamp, JSON.stringify(canditadearry));
+                        //console.log(results[i][j].transcript);
+                    }
                 }
+
+                
+
 
                 document.getElementById('result_text').appendChild(span);
                 document.getElementById(timestamp).insertAdjacentHTML('beforeend', result_log);
