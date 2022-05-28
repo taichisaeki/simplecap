@@ -19,7 +19,10 @@ body {
 #cadition {
     display:none;
     color:rgb(1, 164, 164);
-    background-color: #303030;
+    background-color: rgba(68, 68, 68, 0.9);
+    position: fixed;
+    top: 0;
+    left:0;
 
 }
 
