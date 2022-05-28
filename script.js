@@ -30,6 +30,7 @@ document.onmousedown = function(e) {
 
 function reset() {
     localStorage.clear();
+    alert("Clear");
     console.log("Clear Storage");
 }
 
@@ -54,6 +55,15 @@ function vr_function() {
 
 
     var segmenter = new TinySegmenter();                 // インスタンス生成
+
+    recognition.onsoundstart = function() {
+        document.getElementById('status').innerHTML = "認識中...";
+    };
+
+    recognition.onsoundend = function() {
+        document.getElementById('status').innerHTML = "停止中";
+        vr_function();
+      };
 
     recognition.onresult = function(event) {
         var results = event.results;
