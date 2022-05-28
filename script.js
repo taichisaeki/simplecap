@@ -21,7 +21,7 @@ document.onmousedown = function(e) {
         var value1 = localStorage.getItem(elemId);
         value1 = JSON.parse(value1);
         //console.log(value1.join('\n'));
-        document.getElementById("cadition").innerHTML = value1.join(' > ');
+        document.getElementById("cadition").innerHTML = value1.join(' >>> ');
         openClose();
     } else {
         return false;
