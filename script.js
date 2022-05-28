@@ -1,6 +1,22 @@
 let datalist = {};
 localStorage.setItem("datalist", JSON.stringify(datalist));
 
+const DICT_PATH = "/dict";
+const story = "ここまで音声認識を行ってきましがいかがでしょうか";
+
+window.onload = (event)=>{
+	const ids = [];
+	const names = [];
+
+	// Kuromoji
+	kuromoji.builder({dicPath: DICT_PATH}).build((err, tokenizer)=>{
+		const tokens = tokenizer.tokenize(story);// 解析データの取得
+		tokens.forEach((token)=>{// 解析結果を順番に取得する
+			console.log(token);
+		});
+	});
+}
+
 function vr_function() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     var recognition = new webkitSpeechRecognition();
