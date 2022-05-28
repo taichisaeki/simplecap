@@ -18,8 +18,9 @@ body {
     
 }
 
-.candi {
-    color: green;
+#cadition {
+    display:none;
+    color:darkcyan;
 }
 
 #innter_text {

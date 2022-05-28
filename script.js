@@ -1,3 +1,16 @@
+function openClose(){
+    var obj = document.getElementsByClassName('osushi');
+    for(var i=0;i<obj.length;i++){
+        //非表示ならインライン要素に変更。表示状態なら非表示に変更。
+        if(obj[i].style.display == "inline-block"){
+            obj[i].style.display = "none";
+        }
+        else{
+            obj[i].style.display = "inline-block";
+        }
+    }
+}
+
 document.onmousedown = function(e) {
     var e = e || window.event;
     var elem = e.target || e.srcElement;
@@ -5,11 +18,11 @@ document.onmousedown = function(e) {
     var elemtag = elem.tagName;
 
     if(elemtag == "SPAN") {
-        console.log(elemId);
         var value1 = localStorage.getItem(elemId);
         value1 = JSON.parse(value1);
-        console.log(value1.join('\n'));
-        document.getElementById("result_text").innerHTML = value1 + "<br>";
+        //console.log(value1.join('\n'));
+        document.getElementById("cadition").innerHTML = value1.join(' > ');
+        openClose();
     } else {
         return false;
     }
@@ -32,6 +45,8 @@ function vr_function() {
     var timestamp = date.getTime() ;
     var span = document.createElement("span");
     span.setAttribute("id", timestamp);
+    span.setAttribute("class", 'results');
+
 
     var segmenter = new TinySegmenter();                 // インスタンス生成
 
