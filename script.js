@@ -1,15 +1,11 @@
 let datalist = {};
 localStorage.setItem("datalist", JSON.stringify(datalist));
 
-
-
-window.onload = function() {
-    var segmenter = new TinySegmenter();                 // インスタンス生成
-
-    var segs = segmenter.segment("ここまで音声認識を行ってきましたがどうでしょうか。");  // 単語の配列が返る
-    
-    console.log(segs);
-}
+kuromoji.builder({ dicPath: "/url/to/dictionary/dir/" }).build(function (err, tokenizer) {
+    // tokenizer is ready
+    var path = tokenizer.tokenize("すもももももももものうち");
+    console.log(path);
+});
 
 function vr_function() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
