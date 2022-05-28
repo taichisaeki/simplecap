@@ -4,19 +4,11 @@ localStorage.setItem("datalist", JSON.stringify(datalist));
 
 
 window.onload = function() {
-    const DICT_PATH = "kuromoji/dict";
-    const story = "ここまで音声認識を行ってきましがいかがでしょうか";
-
-	const ids = [];
-	const names = [];
-
-	// Kuromoji
-	kuromoji.builder({dicPath: DICT_PATH}).build((err, tokenizer)=>{
-		const tokens = tokenizer.tokenize(story);// 解析データの取得
-		tokens.forEach((token)=>{// 解析結果を順番に取得する
-			console.log(token);
-		});
-	});
+    var text = "これは音声認識のテストです";
+    kuromoji.builder({ dicPath: "kuromoji/dict" }).build((err, tokenizer) => {
+        // tokensに解析結果が入っている
+        const tokens = tokenizer.tokenize(text);
+    });
 }
 
 function vr_function() {
