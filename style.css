@@ -15,6 +15,11 @@ body {
 #result_text {
     color: white;
     font-size: 3vw;
+    
+}
+
+.candi {
+    color: green;
 }
 
 #innter_text {

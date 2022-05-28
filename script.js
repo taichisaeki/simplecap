@@ -1,5 +1,19 @@
-let datalist = {};
-localStorage.setItem("datalist", JSON.stringify(datalist));
+document.onmousedown = function(e) {
+    var e = e || window.event;
+    var elem = e.target || e.srcElement;
+    var elemId = elem.id;
+    var elemtag = elem.tagName;
+
+    if(elemtag == "SPAN") {
+        console.log(elemId);
+        var value1 = localStorage.getItem(elemId);
+        value1 = JSON.parse(value1);
+        console.log(value1.join('\n'));
+        document.getElementById("result_text").innerHTML = value1 + "<br>";
+    } else {
+        return false;
+    }
+}
 
 
 function vr_function() {
@@ -7,16 +21,19 @@ function vr_function() {
     var recognition = new webkitSpeechRecognition();
     recognition.lang = 'ja';
     recognition.interimResults = true;
-    recognition.maxAlternatives = 10;
+    recognition.maxAlternatives = 4;
     var last_finished = '';
     let current_transcripts = '';
     let transcript = '';
+
+    var canditadearry = [];
 
     var date = new Date() ;
     var timestamp = date.getTime() ;
     var span = document.createElement("span");
     span.setAttribute("id", timestamp);
 
+    var segmenter = new TinySegmenter();                 // インスタンス生成
 
     recognition.onresult = function(event) {
         var results = event.results;
@@ -27,19 +44,27 @@ function vr_function() {
             if (event.results[i].isFinal) {
                 last_finished = results[i][0].transcript;
                 var result_log = last_finished + "。" + '<br>';
+                
+                for (var j = 0; j<recognition.maxAlternatives; j++){
+                    canditadearry.push(results[i][j].transcript);
+                    localStorage.setItem(timestamp, JSON.stringify(canditadearry));
+                    //console.log(results[i][j].transcript);
+                }
+
                 document.getElementById('result_text').appendChild(span);
-                document.getElementById(timestamp).insertAdjacentHTML('beforeend',result_log);
+                document.getElementById(timestamp).insertAdjacentHTML('beforeend', result_log);
                 vr_function();
             } else {
                 current_transcripts += results[i][0].transcript;
                 document.getElementById('innter_text').innerHTML = '<span style="color: darkgray;">' + results[i][0].transcript + '</span>';
                 flag_speech = 1;
             }
+
+            
             }
         }
 
        
-          
           
 
             //document.getElementById("result_text").innerHTML = '<i style="color:#ddd;">' + interimTranscript + '</i>' + '<br>';
