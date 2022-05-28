@@ -4,11 +4,11 @@ localStorage.setItem("datalist", JSON.stringify(datalist));
 
 
 window.onload = function() {
-    var text = "これは音声認識のテストです";
-    kuromoji.builder({ dicPath: "kuromoji/dict" }).build((err, tokenizer) => {
-        // tokensに解析結果が入っている
-        const tokens = tokenizer.tokenize(text);
-    });
+    var segmenter = new TinySegmenter();                 // インスタンス生成
+
+    var segs = segmenter.segment("ここまで音声認識を行ってきましたがいかがでしょうか");  // 単語の配列が返る
+    
+    console.log(segs);
 }
 
 function vr_function() {
