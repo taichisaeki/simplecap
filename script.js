@@ -28,6 +28,11 @@ document.onmousedown = function(e) {
     }
 }
 
+function reset() {
+    localStorage.clear();
+    console.log("Clear Storage");
+}
+
 
 function vr_function() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
