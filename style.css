@@ -14,13 +14,15 @@ body {
 
 #result_text {
     color: white;
-    font-size: 3vw;
-    
+    font-size: 2.5vw;
+    line-height: 1.8;
 }
 
 #cadition {
     display:none;
-    color:darkcyan;
+    color:rgb(1, 164, 164);
+    background-color: #303030;
+
 }
 
 #innter_text {
