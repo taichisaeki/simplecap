@@ -48,7 +48,7 @@ function reset() {
 function vr_function() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     var recognition = new webkitSpeechRecognition();
-    recognition.lang = 'ja';
+    recognition.lang = 'en-US';
     recognition.interimResults = true;
     recognition.maxAlternatives = 4;
     var last_finished = '';
@@ -62,7 +62,7 @@ function vr_function() {
     span.setAttribute("id", timestamp);
 
 
-    var segmenter = new TinySegmenter();                 // インスタンス生成
+    document.getElementById("status").innerHTML = "待機...";
 
     recognition.onsoundstart = function() {
         document.getElementById('status').innerHTML = "認識中...";
@@ -83,7 +83,7 @@ function vr_function() {
             
             if (event.results[i].isFinal) {
                 last_finished = results[i][0].transcript;
-                var result_log = last_finished + "。" + '<br>';
+                var result_log = last_finished + "." + '<br>';
                 
                 if(event.results[0].length >= 4) { //候補が4つ以上あったらリストに追加
                     span.setAttribute("class", 'results');

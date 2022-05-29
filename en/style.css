@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: black;
+}
+
+#content {
+    width: 100%;
+    height: auto;
+}
+
+#result_text {
+    color: white;
+    font-size: 2.5vw;
+}
+
+#cadition {
+    display:none;
+    color:rgb(1, 164, 164);
+    background-color: rgba(68, 68, 68, 0.9);
+    position: fixed;
+    top: 0;
+    left:0;
+}
+
+#result_text span:hover {
+    text-decoration: underline;
+}
+
+#innter_text {
+    color: darkgray;
+    font-size: 3vw;
+}
