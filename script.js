@@ -62,7 +62,8 @@ function vr_function() {
     span.setAttribute("id", timestamp);
 
 
-    var segmenter = new TinySegmenter();                 // インスタンス生成
+    document.getElementById("status").innerHTML = "待機...";
+
 
     recognition.onsoundstart = function() {
         document.getElementById('status').innerHTML = "認識中...";
