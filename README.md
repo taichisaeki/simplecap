@@ -31,9 +31,9 @@ $ npm install simplecap
 
 ## 参考にした資料・サービス
 ・Webカメラの映像に自動字幕を重ねるWebページ  
-https://github.com/1heisuzuki/speech-to-text-webcam-overlay
-・Web Speech APIで途切れない音声認識
-https://monomonotech.jp/kurage/iot/webspeechapi_voice_recognition.html
+https://github.com/1heisuzuki/speech-to-text-webcam-overlay  
+・Web Speech APIで途切れない音声認識  
+https://monomonotech.jp/kurage/iot/webspeechapi_voice_recognition.html  
 ・CaptionLine  
 https://captionline.org  
 ・WebCaptioner  
