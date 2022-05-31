@@ -3,7 +3,6 @@ function openClose(){
     for(var i=0;i<obj.length;i++){
         //非表示ならインライン要素に変更。表示状態なら非表示に変更。
         if(obj[i].style.display == "inline-block"){
-            obj[i].style.display = "none";
         }
         else{
             obj[i].style.display = "inline-block";
@@ -27,7 +26,7 @@ document.onmousedown = function(e) {
 
     if(elemtag == "SPAN") {
         if(elem.className == "results") {
-            var value1 = localStorage.getItem(elemId);
+            var value1 = window.localStorage.getItem(elemId);
             value1 = JSON.parse(value1);
             //console.log(value1.join('\n'));
             document.getElementById("cadition").innerHTML = value1.join(' >> ' + '<br>');
@@ -39,7 +38,7 @@ document.onmousedown = function(e) {
 }
 
 function reset() {
-    localStorage.clear();
+    window.localStorage.clear();
     alert("Clear");
     console.log("Clear Storage");
 }
@@ -90,7 +89,7 @@ function vr_function() {
 
                     for (var j = 0; j<recognition.maxAlternatives; j++){
                         canditadearry.push(results[i][j].transcript);
-                        localStorage.setItem(timestamp, JSON.stringify(canditadearry));
+                        window.localStorage.setItem(timestamp, JSON.stringify(canditadearry));
                         //console.log(results[i][j].transcript);
                     }
                 }

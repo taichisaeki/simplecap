@@ -27,7 +27,7 @@ document.onmousedown = function(e) {
 
     if(elemtag == "SPAN") {
         if(elem.className == "results") {
-            var value1 = localStorage.getItem(elemId);
+            var value1 = window.localStorage.getItem(elemId);
             value1 = JSON.parse(value1);
             //console.log(value1.join('\n'));
             document.getElementById("cadition").innerHTML = value1.join(' >> ' + '<br>');
@@ -39,7 +39,7 @@ document.onmousedown = function(e) {
 }
 
 function reset() {
-    localStorage.clear();
+    window.localStorage.clear();
     alert("Clear");
     console.log("Clear Storage");
 }
