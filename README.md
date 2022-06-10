@@ -22,9 +22,6 @@ CaptionlineやWebCaptionerなどのWebベースキャプションサービスを
 ②キャプションが開始される  
 ※"データのリセット"は、変換候補のlocalstrageを削除します。全く違う内容で認識を行う際はここを押下してください。
 
-## Install
-$ npm install simplecap
-
 ## Licence
 
 [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
