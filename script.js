@@ -51,6 +51,7 @@ function vr_function() {
     recognition.lang = 'ja';
     recognition.interimResults = true;
     recognition.maxAlternatives = 4;
+    recognition.continuous = true;
     var last_finished = '';
     let transcript = '';
 
