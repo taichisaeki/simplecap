@@ -51,7 +51,7 @@ function vr_function() {
     recognition.lang = 'ja';
     recognition.interimResults = true;
     recognition.maxAlternatives = 4;
-    recognition.continuous = true;
+    //recognition.continuous = true;
     var last_finished = '';
     let transcript = '';
 
@@ -106,7 +106,7 @@ function vr_function() {
             } else {
                 current_transcripts += results[i][0].transcript;
                 document.getElementById('innter_text').innerHTML = '<span style="color: darkgray;">' + current_transcripts + '</span>';
-                flag_speech = 1;
+                flag_speech = 0;
             }
 
             
@@ -130,7 +130,7 @@ function vr_function() {
 
 
 
-    flag_speech = 0;
+    flag_speech = 1;
     //要検討 document.getElementById('stbtn').textContent = "認識中・・";
     recognition.start();
 }
