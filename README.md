@@ -11,7 +11,6 @@ CaptionlineやWebCaptionerなどのWebベースキャプションサービスを
 
 このツールは、利用者のみである程度のキャプションを行えることを目標にしています。  
 
-今後、支援者からのリアルタイムキャプションなどの機能も追加予定です。
 
 ## Demo
 デモページはこちら  
@@ -31,7 +30,5 @@ CaptionlineやWebCaptionerなどのWebベースキャプションサービスを
 https://github.com/1heisuzuki/speech-to-text-webcam-overlay  
 ・Web Speech APIで途切れない音声認識  
 https://monomonotech.jp/kurage/iot/webspeechapi_voice_recognition.html  
-・CaptionLine  
-https://captionline.org  
 ・WebCaptioner  
 https://webcaptioner.com
