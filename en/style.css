@@ -33,3 +33,12 @@ body {
     color: darkgray;
     font-size: 3vw;
 }
+
+#mic{
+    position: fixed;
+    bottom: 0;
+    right: 2vw;
+    width: 20vw;
+    height: 20vh;
+    cursor: pointer;
+}
